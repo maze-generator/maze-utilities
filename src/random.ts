@@ -12,6 +12,12 @@ export const shuffle = (
 	// create an array-type copy of input list.
 	const array: Array<any> = [...list]
 
+	// if the number of items to return was not specified,
+	// assume user wants the entire input list shuffled.
+	if (items === undefined) {
+		items = array.length
+	}
+
 	// store final choices here.
 	const results: Array<any> = []
 
