@@ -29,7 +29,7 @@ export default class Stack<DataType> {
 	// remove a node from the "top" of the stack,
 	// and then return it.
 	pop (
-	): DataType|undefined {
+	): DataType {
 
 		// get the result, which might be undefined.
 		const result: DataType|undefined = this.data.pop()
@@ -45,7 +45,7 @@ export default class Stack<DataType> {
 	// return the node at the "top" of the stack,
 	// but do not remove it.
 	peek (
-	): DataType|undefined {
+	): DataType {
 
 		// get the result, which might be undefined.
 		const result: DataType|undefined = this.data.slice(-1)[0]
