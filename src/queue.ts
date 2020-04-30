@@ -29,14 +29,14 @@ export default class Queue<ContentType> {
 	// remove an node from the "front" of the queue,
 	// and then return it.
 	dequeue (
-	): ContentType {
+	): ContentType|undefined {
 		return this.data.shift()
 	}
 
 	// return the node at the "front" of the queue,
 	// but do not remove it.
 	front (
-	): ContentType {
+	): ContentType|undefined {
 		return this.data[0]
 	}
 }

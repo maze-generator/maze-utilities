@@ -29,14 +29,14 @@ export default class Stack<ContentType> {
 	// remove a node from the "top" of the stack,
 	// and then return it.
 	pop (
-	): ContentType {
+	): ContentType|undefined {
 		return this.data.pop()
 	}
 
 	// return the node at the "top" of the stack,
 	// but do not remove it.
 	peek (
-	): ContentType {
+	): ContentType|undefined {
 		return this.data.slice(-1)[0]
 	}
 }
