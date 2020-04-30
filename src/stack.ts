@@ -37,6 +37,6 @@ export default class Stack {
 	// but do not remove it.
 	peek (
 	): any {
-		return ...this.data.slice(-1)
+		return this.data.slice(-1)[0]
 	}
 }
