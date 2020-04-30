@@ -1,8 +1,8 @@
-export default class Queue {
-	private data: Array<any>
+export default class Queue<ContentType> {
+	private data: Array<ContentType>
 
 	constructor(
-		...data: Array<any>
+		...data: Array<ContentType>
 	) {
 		this.data = data
 	}
@@ -21,7 +21,7 @@ export default class Queue {
 
 	// add an node to the "back" of the queue.
 	enqueue (
-		node: any
+		node: ContentType
 	): void {
 		this.data.push(node)
 	}
@@ -29,14 +29,14 @@ export default class Queue {
 	// remove an node from the "front" of the queue,
 	// and then return it.
 	dequeue (
-	): any {
+	): ContentType|undefined {
 		return this.data.shift()
 	}
 
 	// return the node at the "front" of the queue,
 	// but do not remove it.
 	front (
-	): any {
+	): ContentType|undefined {
 		return this.data[0]
 	}
 }

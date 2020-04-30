@@ -1,8 +1,8 @@
-export default class Stack {
-	private data: Array<any>
+export default class Stack<ContentType> {
+	private data: Array<ContentType>
 
 	constructor(
-		...data: Array<any>
+		...data: Array<ContentType>
 	) {
 		this.data = data
 	}
@@ -21,7 +21,7 @@ export default class Stack {
 
 	// add an node to the "top" of the stack.
 	push (
-		node: any
+		node: ContentType
 	): void {
 		this.data.push(node)
 	}
@@ -29,14 +29,14 @@ export default class Stack {
 	// remove a node from the "top" of the stack,
 	// and then return it.
 	pop (
-	): any {
+	): ContentType|undefined {
 		return this.data.pop()
 	}
 
 	// return the node at the "top" of the stack,
 	// but do not remove it.
 	peek (
-	): any {
+	): ContentType|undefined {
 		return this.data.slice(-1)[0]
 	}
 }
