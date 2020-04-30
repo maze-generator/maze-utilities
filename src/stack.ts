@@ -1,8 +1,8 @@
-export default class Stack<ContentType> {
-	private data: Array<ContentType>
+export default class Stack<DataType> {
+	private data: Array<DataType>
 
 	constructor(
-		...data: Array<ContentType>
+		...data: Array<DataType>
 	) {
 		this.data = data
 	}
@@ -21,7 +21,7 @@ export default class Stack<ContentType> {
 
 	// add an node to the "top" of the stack.
 	push (
-		node: ContentType
+		node: DataType
 	): void {
 		this.data.push(node)
 	}
@@ -29,14 +29,32 @@ export default class Stack<ContentType> {
 	// remove a node from the "top" of the stack,
 	// and then return it.
 	pop (
-	): ContentType|undefined {
-		return this.data.pop()
+	): DataType|undefined {
+
+		// get the result, which might be undefined.
+		const result: DataType|undefined = this.data.pop()
+
+		// filter out the possibility of returning undefined.
+		if (result !== undefined) {
+			return result
+		} else {
+			throw new Error('Cannot pop an empty stack!')
+		}
 	}
 
 	// return the node at the "top" of the stack,
 	// but do not remove it.
 	peek (
-	): ContentType|undefined {
-		return this.data.slice(-1)[0]
+	): DataType|undefined {
+
+		// get the result, which might be undefined.
+		const result: DataType|undefined = this.data.slice(-1)[0]
+
+		// filter out the possibility of returning undefined.
+		if (result !== undefined) {
+			return result
+		} else {
+			throw new Error('Cannot peek into an empty stack!')
+		}
 	}
 }

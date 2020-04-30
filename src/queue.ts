@@ -1,8 +1,8 @@
-export default class Queue<ContentType> {
-	private data: Array<ContentType>
+export default class Queue<DataType> {
+	private data: Array<DataType>
 
 	constructor(
-		...data: Array<ContentType>
+		...data: Array<DataType>
 	) {
 		this.data = data
 	}
@@ -21,7 +21,7 @@ export default class Queue<ContentType> {
 
 	// add an node to the "back" of the queue.
 	enqueue (
-		node: ContentType
+		node: DataType
 	): void {
 		this.data.push(node)
 	}
@@ -29,14 +29,32 @@ export default class Queue<ContentType> {
 	// remove an node from the "front" of the queue,
 	// and then return it.
 	dequeue (
-	): ContentType|undefined {
-		return this.data.shift()
+	): DataType {
+
+		// get the result, which might be undefined.
+		const result: DataType|undefined = this.data.shift()
+
+		// filter out the possibility of returning undefined.
+		if (result !== undefined) {
+			return result
+		} else {
+			throw new Error('Cannot dequeue an empty queue!')
+		}
 	}
 
 	// return the node at the "front" of the queue,
 	// but do not remove it.
 	front (
-	): ContentType|undefined {
-		return this.data[0]
+	): DataType {
+
+		// get the result, which might be undefined.
+		const result: DataType|undefined = this.data[0]
+
+		// filter out the possibility of returning undefined.
+		if (result !== undefined) {
+			return result
+		} else {
+			throw new Error('Cannot see front of an empty queue!')
+		}
 	}
 }
