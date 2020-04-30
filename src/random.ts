@@ -11,16 +11,19 @@ export const shuffle = (
 
 	// create an array-type copy of input list.
 	const array: Array<any> = [...list]
+
 	// store final choices here.
 	const results: Array<any> = []
 
 	// retrieve a number of "items" equal to the given input.
-	for (let i = 0; i < items; i++) {
+	for (let i: number = 0; i < items; i++) {
 
 		// choose a random index.
-		const choice = Math.floor(random() * array.length)
+		const choice: number = Math.floor(random() * array.length)
+
 		// add choice to results.
 		results.push(array[choice])
+
 		// remove choice from the array copy.
 		array.splice(choice, 1)
 	}
