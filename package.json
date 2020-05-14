@@ -1,6 +1,6 @@
 {
 	"name": "maze-utilities",
-	"version": "1.1.4",
+	"version": "2.0.0",
 	"description": "These maze utilities used to practice modularity in our other projects.",
 	"keywords": [
 		"maze",
@@ -17,6 +17,7 @@
 	"bugs": {
 		"url": "https://github.com/maze-generator/maze-utilities/issues"
 	},
+	"type": "module",
 	"main": "lib/index.js",
 	"files": [
 		"lib/**/*"
