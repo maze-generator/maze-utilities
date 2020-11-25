@@ -1,6 +1,6 @@
 {
 	"name": "maze-utilities",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "These maze utilities used to practice modularity in our other projects.",
 	"keywords": [
 		"maze",
@@ -18,18 +18,14 @@
 		"url": "https://github.com/maze-generator/maze-utilities/issues"
 	},
 	"type": "module",
-	"main": "lib/index.js",
+	"main": "src/main.js",
 	"files": [
-		"lib/**/*"
+		"src/*"
 	],
 	"dependencies": {},
-	"devDependencies": {
-		"ts-node": "^8.9.0",
-		"typescript": "^3.8.3"
-	},
+	"devDependencies": {},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "ts-node src/index.ts",
-		"build": "tsc"
+		"start": "node src/main.js"
 	}
 }
