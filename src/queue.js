@@ -1,38 +1,29 @@
-export default class Queue<DataType> {
-	private data: Array<DataType>
-
-	constructor(
-		...data: Array<DataType>
-	) {
+export default class Queue {
+	constructor(...data) {
 		this.data = data
 	}
 
 	// get the "length" of the queue, or number of nodes.
-	get size (
-	): number {
+	get size () {
 		return this.data.length
 	}
 
 	// the queue has nodes if its size is greater than zero.
-	get hasNodes (
-	): boolean {
+	get hasNodes () {
 		return this.size !== 0
 	}
 
 	// add an node to the "back" of the queue.
-	enqueue (
-		node: DataType
-	): void {
+	enqueue (node) {
 		this.data.push(node)
 	}
 
 	// remove an node from the "front" of the queue,
 	// and then return it.
-	dequeue (
-	): DataType {
+	dequeue () {
 
 		// get the result, which might be undefined.
-		const result: DataType|undefined = this.data.shift()
+		const result = this.data.shift()
 
 		// filter out the possibility of returning undefined.
 		if (result !== undefined) {
@@ -44,11 +35,10 @@ export default class Queue<DataType> {
 
 	// return the node at the "front" of the queue,
 	// but do not remove it.
-	front (
-	): DataType {
+	front () {
 
 		// get the result, which might be undefined.
-		const result: DataType|undefined = this.data[0]
+		const result = this.data[0]
 
 		// filter out the possibility of returning undefined.
 		if (result !== undefined) {
